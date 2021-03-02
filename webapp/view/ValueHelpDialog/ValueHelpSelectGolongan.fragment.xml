@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="idValueHelpGolongan"
+		title="Choose Golongan"
+		class="sapUiPopupWithPadding"
+		items="{odataPromosi>/MasterDataReasonPromosiSet}"
+		search="handleValueHelpGolonganSearch"
+		confirm="handleValueHelpGolonganClose" 
+		cancel="handleValueHelpGolonganCancel">
+		<StandardListItem title="{odataPromosi>Mgtxt}" type="Active">
+		</StandardListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

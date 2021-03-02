@@ -1,0 +1,22 @@
+{
+	"dataBinding": {
+		"/webapp/view/ListDataPromotion.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/SelectEmployeePromotion.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/CreateNewPromotion.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/DetailRequestPromotion.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/SelectDialog1.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/Dialog1.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

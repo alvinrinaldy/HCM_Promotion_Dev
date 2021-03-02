@@ -1,0 +1,434 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.modulePa.controller.CreateNewPromotion" xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page showHeader="true" title="Create New Request" showFooter="true" showNavButton="true">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="Employee Information" level="Auto" icon="sap-icon://employee"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Employee ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="62117030" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
+										valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Alvin Rinaldy" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title>
+					<core:Title text="Promotion Information" level="Auto" icon="sap-icon://message-information"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="" placeholder="" type="Date" description="" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true"
+										class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
+									<Input type="Date" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Company" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="PT Wilmar Consultancy Service" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Unit" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="WCS" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Division" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Business Intelligence" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Departemen" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Digital Business Analytics" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Section" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="SAP FIORI" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Position" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Staff" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Jabatan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="SAP Analyst" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Golongan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="4A" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Current Organization" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="" placeholder="" type="Date" description="" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true"
+										class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
+									<Input type="Date" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Company" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="PT. Wilmar Consultancy Services" placeholder="Select Company" type="Text" showValueHelp="true" enabled="false" visible="true"
+										width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Unit" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="WCS" placeholder="Select Unit" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Division" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Business Intelligence" placeholder="Select Division" type="Text" showValueHelp="true" enabled="false" visible="true"
+										width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Departemen" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Digital Business &amp; Analytics" placeholder="Select Departement" type="Text" showValueHelp="true" enabled="false"
+										visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Section" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="SAP FIORI" placeholder="Select Section" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Position" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Solution Architect" placeholder="Input Position" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Jabatan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Solution Architect" placeholder="Input Jabatan" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Golongan" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="idGolongan" valueHelpRequest="handleValueHelpSelectGolongan" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Organization after promotion" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Hiring Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="23.10.2017" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Length of Service" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="3" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+									<Text text="Years" width="49px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									<Input value="4" type="Text" showValueHelp="false" enabled="false" visible="true" width="89.8046875px" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Text text="Months" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Last Promotion Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="23.10.2019" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false"
+										required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Length of Service" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Reason Promotion" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<!--<ComboBox placeholder="Select Reason" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">-->
+									<!--	<items >-->
+									<!--		<core:Item text="{Mgtxt}" enabled="true" key="{Massg}"/>-->
+									<!--	</items>-->
+									<!--</ComboBox>-->
+									
+									<ComboBox
+										items="{odataPromosi>/MasterDataReasonPromosiSet}">
+										<core:ListItem key="{odataPromosi>Massg}" text="{odataPromosi>Mgtxt}" />
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Comment Request" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea value="" rows="2" placeholder="Input your comment on request" cols="20" maxLength="0" wrapping="None" enabled="true"
+										required="false" valueStateText="Invalid entry" visible="true"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Request Information" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Appraisal Year" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="2021" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Appraisal Score" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="A+" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false"
+										valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Performance Appraisals" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Education" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Bachelor Degree" placeholder="Bachelor Degree" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Branch Of Study" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Information Technology" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Last Education" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Warning Letter" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="SP I" placeholder="Bachelor Degree" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="01.01.2021" placeholder="Information Technologu" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="End Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="01.06.2021" placeholder="Information Technologu" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
+										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Reason" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input value="Melanggar Peraturan" placeholder="Information Technologu" type="Text" showValueHelp="false" enabled="false" visible="true"
+										width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Warning Letter" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="Recommendation" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox selectedKey="Recommended" placeholder="Select Reason" editable="true" enabled="true" visible="true" width="auto" valueState="None"
+										maxWidth="100%">
+										<items>
+											<core:Item text="Recommended" enabled="true" key="Recommended"/>
+											<core:Item text="Not Recommended" enabled="true" key="Not Recommended"/>
+											<core:Item text="" enabled="true" key=""/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title>
+							<core:Title text="Recommendation" level="Auto"/>
+						</form:title>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Create Request" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress1"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

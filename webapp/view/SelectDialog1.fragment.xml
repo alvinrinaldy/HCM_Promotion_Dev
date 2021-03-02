@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.modulePa.controller.SelectDialog1" xmlns="sap.m">
+	<SelectDialog id="sap_m_SelectDialog_0" title="Select Dialog Title" growingThreshold="20" liveChange="_onSelectDialogLiveChange">
+		<items>
+			<StandardListItem icon="sap-icon://notes" title="Title 1" description="Description 1" info="Info 1" infoState="None"/>
+			<StandardListItem icon="sap-icon://message-success" title="Title 2" description="Description 2" info="Info 2" infoState="Success"/>
+			<StandardListItem icon="sap-icon://message-error" title="Title 3" description="Description 3" info="Info 3" infoState="Error"/>
+		</items>
+	</SelectDialog>
+</core:FragmentDefinition>
