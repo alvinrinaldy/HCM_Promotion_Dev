@@ -172,7 +172,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oBindingData.filters = [];
 			aPropertyFilters = [];
 
-			aPropertyFilters.push(new sap.ui.model.Filter("status", "EQ", "Pending"));
+			aPropertyFilters.push(new sap.ui.model.Filter("Status", "EQ", "01"));
 			oBindingData.filters.push(new sap.ui.model.Filter(aPropertyFilters, false));
 
 			this.updateBindingOptions("sap_Worklist_Page_0-content-sap_m_IconTabBar-1-items-sap_m_IconTabFilter-2-content-build_simple_Table-1",
@@ -181,7 +181,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oBindingData.filters = [];
 			aPropertyFilters = [];
 
-			aPropertyFilters.push(new sap.ui.model.Filter("status", "EQ", "Approved"));
+			aPropertyFilters.push(new sap.ui.model.Filter("Status", "EQ", "02"));
 			oBindingData.filters.push(new sap.ui.model.Filter(aPropertyFilters, false));
 
 			this.updateBindingOptions("sap_Worklist_Page_0-content-build_simple_Table-1604485562140", oBindingData);
@@ -215,7 +215,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"sap_Worklist_Page_0-content-sap_m_IconTabBar-1-items-sap_m_IconTabFilter-2-content-build_simple_Table-1", "items");
 
 			this.applyFiltersAndSorters("sap_Worklist_Page_0-content-build_simple_Table-1604485562140", "items");
-
+			
+			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
+			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
+			oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
+			this.getView().setModel(oModel,"odataListPromosi");
 		},
 		onExit: function () {
 

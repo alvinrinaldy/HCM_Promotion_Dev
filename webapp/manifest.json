@@ -10,7 +10,7 @@
 		},
 		"dataSources": {
 			"local": {
-				"uri": "/here/goes/your/serviceUrl/local/",
+				"uri": "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -97,6 +97,17 @@
 				},
 				"dataSource": "ZHCM_PROMOSI_SRV",
 				"preload": true
+			},
+			"ListPromosi": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": true
+				},
+				"dataSource": "ZHCM_PROMOSI_SRV",
+				"preload": true
 			}
 		},
 		"resources": {
@@ -111,9 +122,7 @@
 				"clearTarget": false,
 				"controlAggregation": "pages",
 				"bypassed": {
-					"target": [
-						"ListDataPromotion"
-					]
+					"target": ["ListDataPromotion"]
 				}
 			},
 			"targets": {
@@ -146,43 +155,27 @@
 					"transition": "slide"
 				}
 			},
-			"routes": [
-				{
-					"pattern": "ListDataPromotion/:context:",
-					"name": "ListDataPromotion",
-					"target": [
-						"ListDataPromotion"
-					]
-				},
-				{
-					"pattern": "",
-					"name": "default",
-					"target": [
-						"ListDataPromotion"
-					]
-				},
-				{
-					"pattern": "SelectEmployeePromotion/:context:",
-					"name": "SelectEmployeePromotion",
-					"target": [
-						"SelectEmployeePromotion"
-					]
-				},
-				{
-					"pattern": "CreateNewPromotion/:context:",
-					"name": "CreateNewPromotion",
-					"target": [
-						"CreateNewPromotion"
-					]
-				},
-				{
-					"pattern": "DetailRequestPromotion/:context:",
-					"name": "DetailRequestPromotion",
-					"target": [
-						"DetailRequestPromotion"
-					]
-				}
-			]
+			"routes": [{
+				"pattern": "ListDataPromotion/:context:",
+				"name": "ListDataPromotion",
+				"target": ["ListDataPromotion"]
+			}, {
+				"pattern": "",
+				"name": "default",
+				"target": ["ListDataPromotion"]
+			}, {
+				"pattern": "SelectEmployeePromotion/:context:",
+				"name": "SelectEmployeePromotion",
+				"target": ["SelectEmployeePromotion"]
+			}, {
+				"pattern": "CreateNewPromotion/:context:",
+				"name": "CreateNewPromotion",
+				"target": ["CreateNewPromotion"]
+			}, {
+				"pattern": "DetailRequestPromotion/:context:",
+				"name": "DetailRequestPromotion",
+				"target": ["DetailRequestPromotion"]
+			}]
 		}
 	}
 }
