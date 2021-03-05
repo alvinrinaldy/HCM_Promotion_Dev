@@ -2,14 +2,14 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
 	<SelectDialog
-		id="idValueHelpGolongan"
+		id="idValueHelpEmployee"
 		title="Choose Employee"
 		class="sapUiPopupWithPadding"
-		items="{odataPromosi>/MasterDataReasonPromosiSet}"
-		search="handleValueHelpGolonganSearch"
-		confirm="handleValueHelpGolonganClose" 
-		cancel="handleValueHelpGolonganCancel">
-		<StandardListItem title="{odataPromosi>Pernr}" description="{odataPromosi>Cname}" type="Active">
+		items="{odataSelectEmployee>/SelectEmployeeSet}"
+		search="handleValueHelpEmployeeSearch"
+		confirm="handleValueHelpEmployeeClose" 
+		cancel="handleValueHelpEmployeeCancel">
+		<StandardListItem title="{odataSelectEmployee>Pernr}" description="{odataSelectEmployee>Nachn}" type="Active">
 		</StandardListItem>
 	</SelectDialog>
 </core:FragmentDefinition>

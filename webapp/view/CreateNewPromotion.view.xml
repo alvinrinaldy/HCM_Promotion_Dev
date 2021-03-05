@@ -14,7 +14,7 @@
 									<Label text="Employee ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input value="62117030" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
+									<Input value="{ListPromosi>Pernr}" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
 										valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
 								</form:fields>
 							</form:FormElement>
@@ -23,7 +23,7 @@
 									<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input value="Alvin Rinaldy" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
+									<Input value="{ListPromosi>Nachn}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
 										valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>

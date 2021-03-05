@@ -204,6 +204,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		
+		
 		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("ListDataPromotion").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
@@ -218,8 +220,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
 			oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
-			this.getView().setModel(oModel,"odataListPromosi");
+			this.getView().setModel(oModel,"odataSelectEmployee");
+			// console.log("oModel test : ");
+			// console.log(oModel);
+			
 		},
+		
 		onExit: function () {
 
 			// to destroy templates for bound aggregations when templateShareable is true on exit to prevent duplicateId issue

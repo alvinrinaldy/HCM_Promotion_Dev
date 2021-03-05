@@ -2,8 +2,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./Dialog1",
 	"./utilities",
-	"sap/ui/core/routing/History"
-], function (BaseController, MessageBox, Dialog1, Utilities, History) {
+	"sap/ui/core/routing/History",
+	"sap/m/MessageToast"
+], function (BaseController, MessageBox, Dialog1, Utilities, History,MessageToast) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.modulePa.controller.CreateNewPromotion", {
@@ -12,25 +13,25 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			var oParams = {};
 
-			if (oEvent.mParameters.data.context) {
-				this.sContext = oEvent.mParameters.data.context;
+			// if (oEvent.mParameters.data.context) {
+			// 	this.sContext = oEvent.mParameters.data.context;
 
-			} else {
-				if (this.getOwnerComponent().getComponentData()) {
-					var patternConvert = function (oParam) {
-						if (Object.keys(oParam).length !== 0) {
-							for (var prop in oParam) {
-								if (prop !== "sourcePrototype" && prop.includes("Set")) {
-									return prop + "(" + oParam[prop][0] + ")";
-								}
-							}
-						}
-					};
+			// } else {
+			// 	if (this.getOwnerComponent().getComponentData()) {
+			// 		var patternConvert = function (oParam) {
+			// 			if (Object.keys(oParam).length !== 0) {
+			// 				for (var prop in oParam) {
+			// 					if (prop !== "sourcePrototype" && prop.includes("Set")) {
+			// 						return prop + "(" + oParam[prop][0] + ")";
+			// 					}
+			// 				}
+			// 			}
+			// 		};
 
-					this.sContext = patternConvert(this.getOwnerComponent().getComponentData().startupParameters);
+			// 		this.sContext = patternConvert(this.getOwnerComponent().getComponentData().startupParameters);
 
-				}
-			}
+			// 	}
+			// }
 
 			var oPath;
 
@@ -145,15 +146,38 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
+		
+		_onObjectMatched: function (oEvent) {
+			
+			//get odata entity last education by employeeID
+			this.getView().bindElement({
+				path: decodeURIComponent("/LastEducationSet('" + oEvent.getParameter("arguments").EmployeeId+"')"),
+				model: "ListPromosi"
+			});
+			var employeeid = oEvent.getParameter("arguments").EmployeeId;
+			MessageToast.show(employeeid);
+			// var accEbeln = this.getView().byId("Ebeln").getValue();
+			// //var accEbelp = this.getView().byId("Ebelp").getValue();
+			// var oFilter = new sap.ui.model.Filter("Ebeln", sap.ui.model.FilterOperator.EQ, accEbeln);
+			// this.getView().byId("listItems").getBinding("items").filter(oFilter);
+
+			
+		},
+		
 		onInit: function () {
-			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			this.oRouter.getTarget("CreateNewPromotion").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+			// this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			// this.oRouter.getTarget("CreateNewPromotion").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.getRoute("CreateNewPromotion").attachPatternMatched(this._onObjectMatched, this);
+
+			
 			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
-			// console.log("oModel test : ");
-			// console.log(oModel);
 			oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
 			this.getView().setModel(oModel,"odataPromosi");
+			
+			
 		},
 		
 		handleValueHelpSelectGolongan : function (oController) {
