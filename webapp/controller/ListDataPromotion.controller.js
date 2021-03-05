@@ -123,7 +123,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					MessageBox.error(err.message);
 				}
 			});
-
 		},
 		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};
@@ -244,7 +243,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 					}
 				}
 			}
-
 		}
 	});
 }, /* bExport= */ true);

@@ -150,6 +150,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.oRouter.getTarget("CreateNewPromotion").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
+			// console.log("oModel test : ");
+			// console.log(oModel);
 			oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
 			this.getView().setModel(oModel,"odataPromosi");
 		},

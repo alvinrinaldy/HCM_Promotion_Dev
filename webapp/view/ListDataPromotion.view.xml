@@ -9,7 +9,7 @@
 			</OverflowToolbar>
 			<IconTabBar expandable="true" expanded="true" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="true" selectedKey="Ok" class="sapUiResponsiveContentPadding">
 				<items>
-					<IconTabFilter icon="" iconColor="Neutral" text="On Request" count="23" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+					<IconTabFilter icon="" iconColor="Neutral" text="On Request" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false" count="23">
 						<content>
 							<Table id="sap_Worklist_Page_0-content-sap_m_IconTabBar-1-items-sap_m_IconTabFilter-2-content-build_simple_Table-1" width="auto" noDataText="No data was found" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{path:'ListPromosi>/LISTREQUESTDATAPROMOTIONSet',filters:[{path:'Status',operator:'EQ',value1:'&quot;01&quot;'}]}">
 								<infoToolbar/>
@@ -105,8 +105,8 @@
 											<Text text="{ListPromosi>Unit}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
 											<Text text="{ListPromosi>DiviTxt}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiTinyMargin"/>
 											<Text text="{ListPromosi>DeptTxt}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{ListPromosi>Begda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{ListPromosi>Endda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>RequestDate}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>EfektifDate}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 											<Text text="{ListPromosi>Cname}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 											<Label text="{ListPromosi>Endda}" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
 										</cells>
@@ -115,7 +115,7 @@
 							</Table>
 						</content>
 					</IconTabFilter>
-					<IconTabFilter icon="" iconColor="Positive" text="Approved" count="23" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+					<IconTabFilter icon="" iconColor="Positive" text="Approved" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false" count="23">
 						<content>
 							<Table id="sap_Worklist_Page_0-content-build_simple_Table-1604485562140" width="auto" noDataText="No data was found" mode="None" showSeparators="None" growing="true" growingThreshold="20" growingScrollToLoad="true" class="sapUiResponsiveMargin" items="{path:'ListPromosi>/LISTREQUESTDATAPROMOTIONSet',filters:[{path:'Status',operator:'EQ',value1:'02'}]}">
 								<infoToolbar/>

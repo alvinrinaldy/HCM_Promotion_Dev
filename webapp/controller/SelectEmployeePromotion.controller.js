@@ -115,6 +115,19 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("SelectEmployeePromotion").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 
+		},
+		
+		handleValueHelpSelectEmployee : function (oController) {
+		if (!this._valueHelpDialogEmployee) {
+			this._valueHelpDialogEmployee = sap.ui.xmlfragment(
+				"com.sap.build.standard.modulePa.view.ValueHelpDialog.ValueHelpSelectEmployee",
+				this
+			);
+			this.getView().addDependent(this._valueHelpDialogEmployee);
+		}
+
+			// open value help dialog
+			this._valueHelpDialogEmployee.open();
 		}
 	});
 }, /* bExport= */ true);

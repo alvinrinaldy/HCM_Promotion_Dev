@@ -3,13 +3,13 @@
 	xmlns:core="sap.ui.core">
 	<SelectDialog
 		id="idValueHelpGolongan"
-		title="Choose Golongan"
+		title="Choose Employee"
 		class="sapUiPopupWithPadding"
 		items="{odataPromosi>/MasterDataReasonPromosiSet}"
 		search="handleValueHelpGolonganSearch"
 		confirm="handleValueHelpGolonganClose" 
 		cancel="handleValueHelpGolonganCancel">
-		<StandardListItem title="{odataPromosi>Mgtxt}" description="{odataPromosi>Massg}" type="Active">
+		<StandardListItem title="{odataPromosi>Pernr}" description="{odataPromosi>Cname}" type="Active">
 		</StandardListItem>
 	</SelectDialog>
 </core:FragmentDefinition>
