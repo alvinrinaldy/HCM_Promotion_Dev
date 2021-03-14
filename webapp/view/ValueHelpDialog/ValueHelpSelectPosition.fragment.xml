@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="idValueHelpJabatan"
+		title="Choose Position"
+		class="sapUiPopupWithPadding"
+		items="{odataPromosi>/GetAfterPromotionDataSet}"
+		search="handleValueHelpPositionSearch"
+		confirm="handleValueHelpPositionClose" 
+		cancel="handleValueHelpPositionCancel">
+		<StandardListItem title="{odataPromosi>PlansA}" description="{odataPromosi>PlansTxtA}" type="Active">
+		</StandardListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

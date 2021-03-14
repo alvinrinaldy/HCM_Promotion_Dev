@@ -5,11 +5,11 @@
 		id="idValueHelpGolongan"
 		title="Choose Golongan"
 		class="sapUiPopupWithPadding"
-		items="{odataPromosi>/MasterDataReasonPromosiSet}"
+		items="{odataPromosi>/MasterDataEmployeeSubGroupSet}"
 		search="handleValueHelpGolonganSearch"
 		confirm="handleValueHelpGolonganClose" 
 		cancel="handleValueHelpGolonganCancel">
-		<StandardListItem title="{odataPromosi>Mgtxt}" description="{odataPromosi>Massg}" type="Active">
+		<StandardListItem title="{odataPromosi>Persk}" description="{odataPromosi>Ptext}" type="Active">
 		</StandardListItem>
 	</SelectDialog>
 </core:FragmentDefinition>

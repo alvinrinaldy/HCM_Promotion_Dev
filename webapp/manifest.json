@@ -168,7 +168,7 @@
 				"name": "SelectEmployeePromotion",
 				"target": ["SelectEmployeePromotion"]
 			}, {
-				"pattern": "CreateNewPromotion/{EmployeeId}",
+				"pattern": "CreateNewPromotion/{EmployeeId}/{EmployeeName}",
 				"name": "CreateNewPromotion",
 				"target": ["CreateNewPromotion"]
 			}, {

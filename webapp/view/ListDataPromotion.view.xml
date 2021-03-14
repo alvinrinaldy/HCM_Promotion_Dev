@@ -98,17 +98,17 @@
 								<items>
 									<ColumnListItem type="Navigation" press="_onRowPress">
 										<cells>
-											<Link href="{RequestID}" text="{ListPromosi>Reqid}" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>Pernr}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>Cname}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>Bukrs}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>Unit}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>DiviTxt}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiTinyMargin"/>
-											<Text text="{ListPromosi>DeptTxt}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{ListPromosi>RequestDate}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{ListPromosi>EfektifDate}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{ListPromosi>Cname}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Label text="{ListPromosi>Endda}" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+											<Link href="{RequestID}" text="{ListPromosi>Reqid}" textAlign="Begin" width="auto" target="_blank" wrapping="true" enabled="true" visible="true" emphasized="false" subtle="false"/>
+											<Text text="{ListPromosi>Pernr}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+											<Text text="{ListPromosi>Cname}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>BukrsA}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+											<Text text="{ListPromosi>UnitA}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
+											<Text text="{ListPromosi>DeptTxtA}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="LTR" visible="true" class="sapUiTinyMargin"/>
+											<Text text="{ListPromosi>DeptTxtA}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>RequestDate}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>EfektifDate}" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{ListPromosi>Appby}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Label text="{ListPromosi>RequestDate}" design="Standard" width="auto" required="true" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiTinyMargin"/>
 										</cells>
 									</ColumnListItem>
 								</items>

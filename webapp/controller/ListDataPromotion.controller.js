@@ -112,17 +112,34 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 		},
 		_onRowPress: function (oEvent) {
+			console.log("row pressed");
+			
+			// var oTable = sap.ui.getCore().byId("sap_Worklist_Page_0-content-sap_m_IconTabBar-1-items-sap_m_IconTabFilter-2-content-build_simple_Table-1");
+			var oTable = oEvent.getSource().getBindingContext("ListPromosi").getObject();
+			var oViewModelRequestDetail = new sap.ui.model.json.JSONModel(oTable);
+			sap.ui.getCore().setModel(oViewModelRequestDetail, "RequestDetail");
+			
+			console.log(oTable);
+			
+			// var SelectedRequest = oEvent.getParameter("ListPromosi").getBindingContext().getProperty("Reqid");
+			
+			// console.log(sItem);
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("DetailRequestPromotion", {
+				// EmployeeId: encodeURIComponent(oIdEmployee),
+				// EmployeeName: encodeURIComponent(oEmployeeName)
+			}); 
+			// var oBindingContext = oEvent.getSource().getBindingContext();
 
-			var oBindingContext = oEvent.getSource().getBindingContext();
+			// return new Promise(function (fnResolve) {
 
-			return new Promise(function (fnResolve) {
-
-				this.doNavigate("DetailRequestPromotion", oBindingContext, fnResolve, "");
-			}.bind(this)).catch(function (err) {
-				if (err !== undefined) {
-					MessageBox.error(err.message);
-				}
-			});
+			// 	this.doNavigate("DetailRequestPromotion", oBindingContext, fnResolve, "");
+			// }.bind(this)).catch(function (err) {
+			// 	if (err !== undefined) {
+			// 		MessageBox.error(err.message);
+			// 	}
+			// });
 		},
 		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};

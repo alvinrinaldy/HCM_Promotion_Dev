@@ -48,6 +48,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		
 			var context = oEvent.getSource();
 			var oIdEmployee = this.getView().byId("idEmployee").getValue().substr(0, 8);
+			var oEmployeeName = this.getView().byId("idEmployee").getValue().substr(11);
 			// oIdEmployee = "SelectEmployeeSet('"+oIdEmployee +"')";
 			// // var oEmployeeName = this.getView().byId("idEmployee").getValue().substr(11);
 			// MessageToast.show(oIdEmployee);
@@ -63,7 +64,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			// //	MessageToast.show(data);
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("CreateNewPromotion", {
-				EmployeeId: encodeURIComponent(oIdEmployee)
+				EmployeeId: encodeURIComponent(oIdEmployee),
+				EmployeeName: encodeURIComponent(oEmployeeName)
 			});
 
 			
