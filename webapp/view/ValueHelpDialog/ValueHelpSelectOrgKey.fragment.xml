@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="idValueHelpOrgKey"
+		title="Choose Organization Key"
+		class="sapUiPopupWithPadding"
+		items="{odataPromosi>/MasterDataOrgKeySet}"
+		search="handleValueHelpOrgKeySearch"
+		confirm="handleValueHelpOrgKeyClose" 
+		cancel="handleValueHelpOrgKeyCancel">
+		<StandardListItem title="{odataPromosi>Orgky}" info="{odataPromosi>Text2}" type="Active">
+		</StandardListItem>
+	</SelectDialog>
+</core:FragmentDefinition>

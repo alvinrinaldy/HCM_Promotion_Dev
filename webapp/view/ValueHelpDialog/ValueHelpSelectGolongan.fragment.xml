@@ -9,7 +9,7 @@
 		search="handleValueHelpGolonganSearch"
 		confirm="handleValueHelpGolonganClose" 
 		cancel="handleValueHelpGolonganCancel">
-		<StandardListItem title="{odataPromosi>Persk}" description="{odataPromosi>Ptext}" type="Active">
+		<StandardListItem title="{odataPromosi>Persk}" info="{odataPromosi>Ptext}" type="Active">
 		</StandardListItem>
 	</SelectDialog>
 </core:FragmentDefinition>

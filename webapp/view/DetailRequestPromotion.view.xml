@@ -25,7 +25,7 @@
 									<Label text="Request ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="RequestId" value="{SelectData>/Reqid}" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto"
+									<Input id="RequestId" value="{SelectData>/Reqid}" placeholder="Select Employee ID" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
 										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
@@ -34,7 +34,7 @@
 									<Label text="Employee ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="EmployeeId" value="{SelectData>/Pernr}" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto"
+									<Input id="EmployeeId" value="{SelectData>/Pernr}" placeholder="Select Employee ID" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
 										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
@@ -43,7 +43,7 @@
 									<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="EmployeeName" value="{SelectData>/Cname}" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false"
+									<Input id="EmployeeName" value="{SelectData>/Cname}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
 										valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>

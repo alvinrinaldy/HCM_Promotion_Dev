@@ -1,5 +1,4 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.modulePa.controller.CreateNewPromotion" xmlns="sap.m"
-	xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.modulePa.controller.CreateNewPromotion">
 	<Page showHeader="true" title="Create New Request" showFooter="true" showNavButton="true">
 		<content>
 			<form:Form width="100%" editable="true" visible="true">
@@ -14,8 +13,7 @@
 									<Label text="Employee ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input value="" id="EmployeeId" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
-										valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
+									<Input value="" id="EmployeeId" placeholder="Select Employee ID" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0" valueHelpRequest="_onInputValueHelpRequest"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -23,8 +21,7 @@
 									<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input value="" id="EmployeeName" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input value="" id="EmployeeName" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -47,12 +44,9 @@
 									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="StartDateC" value="{CurrentOrganization>/BegdaC}" placeholder="dd/mm/yyyy" type="Text" description="" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
-									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true"
-										class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
-									<Input id="EndDateC" value="{CurrentOrganization>/EnddaC}" placeholder="dd/mm/yyyy" type="Text" description="" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="StartDateC" value="{CurrentOrganization>/BegdaC}" placeholder="dd/mm/yyyy" type="Text" description="" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true" class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
+									<Input id="EndDateC" value="{CurrentOrganization>/EnddaC}" placeholder="dd.mm.yyyy" type="Text" description="" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -60,12 +54,10 @@
 									<Label text="Company" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="CompanyNameC" value ="{CurrentOrganization>/ButxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="CompanyNameC" value="{CurrentOrganization>/ButxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 								<form:fields>
-									<Input id="CompanyCodeC" value ="{CurrentOrganization>/BukrsC}" type="Text" showValueHelp="false" enabled="false" visible="false" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="CompanyCodeC" value="{CurrentOrganization>/BukrsC}" type="Text" showValueHelp="false" enabled="false" visible="false" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -73,8 +65,7 @@
 									<Label text="Unit" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="UnitC" value="{CurrentOrganization>/UnitC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="UnitC" value="{CurrentOrganization>/UnitC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -82,8 +73,7 @@
 									<Label text="Division" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="DivisionC" value="{CurrentOrganization>/DiviC} - {CurrentOrganization>/DiviTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="DivisionC" value="{CurrentOrganization>/DiviC} - {CurrentOrganization>/DiviTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -91,8 +81,7 @@
 									<Label text="Departemen" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="DepartmentC" value="{CurrentOrganization>/DeptC} - {CurrentOrganization>/DeptTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="DepartmentC" value="{CurrentOrganization>/DeptC} - {CurrentOrganization>/DeptTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -100,8 +89,7 @@
 									<Label text="Section" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="SectionC" value="{CurrentOrganization>/SectC} - {CurrentOrganization>/SectTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="SectionC" value="{CurrentOrganization>/SectC} - {CurrentOrganization>/SectTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -109,8 +97,7 @@
 									<Label text="Position" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="PosisiC" value="{CurrentOrganization>/PlansC} - {CurrentOrganization>/PlansTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="PosisiC" value="{CurrentOrganization>/PlansC} - {CurrentOrganization>/PlansTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -118,8 +105,7 @@
 									<Label text="Jabatan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="JabatanC" value="{CurrentOrganization>/StellC} - {CurrentOrganization>/StellTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="JabatanC" value="{CurrentOrganization>/StellC} - {CurrentOrganization>/StellTxtC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -127,8 +113,7 @@
 									<Label text="Golongan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="GolonganC" value="{CurrentOrganization>/PerskC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="true"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="GolonganC" value="{CurrentOrganization>/PerskC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -136,8 +121,7 @@
 									<Label text="Org. Key" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="OrgKeyC" value="{CurrentOrganization>/Vdsk1C}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="OrgKeyC" value="{CurrentOrganization>/Vdsk1C}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -152,12 +136,9 @@
 									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="StartDateA" value="" placeholder="" type="Date" description="" showValueHelp="false" enabled="true" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
-									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true"
-										class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
-									<Input id="EndDateA" value ="31-12-9999" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="StartDateA" value="" placeholder="" type="Date" description="" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" valueFormat="dd/mm/yyyy" dateFormat="dd.MM.YYYY"/>
+									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true" class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
+									<Input id="EndDateA" value="31.12.9999" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -165,12 +146,10 @@
 									<Label text="Company" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="CompanyName" value="{CurrentOrganization>/ButxtA}" placeholder="Select Company" type="Text" showValueHelp="true" enabled="false" visible="true"
-										width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="CompanyName" value="{CurrentOrganization>/ButxtA}" placeholder="Select Company" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 								<form:fields>
-									<Input id="CompanyCode" value="{CurrentOrganization>/BukrsA}" placeholder="Select Company" type="Text" showValueHelp="true" enabled="false" visible="false"
-										width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="CompanyCode" value="{CurrentOrganization>/BukrsA}" placeholder="Select Company" type="Text" showValueHelp="true" enabled="false" visible="false" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -178,8 +157,7 @@
 									<Label text="Unit" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="UnitA" value="{CurrentOrganization>/UnitA}" placeholder="Select Unit" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="UnitA" value="{CurrentOrganization>/UnitA}" placeholder="Select Unit" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -187,8 +165,7 @@
 									<Label text="Division" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="DivisionA" value="" placeholder="Select Division" type="Text" showValueHelp="true" enabled="false" visible="true"
-										width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="DivisionA" value="" placeholder="Select Division" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -196,8 +173,7 @@
 									<Label text="Department" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="DepartmentA" value="" placeholder="Select Departement" type="Text" showValueHelp="true" enabled="false"
-										visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="DepartmentA" value="" placeholder="Select Departement" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -205,8 +181,7 @@
 									<Label text="Section" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="SectionA" value="" placeholder="Select Section" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="SectionA" value="" placeholder="Select Section" type="Text" showValueHelp="true" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -214,8 +189,7 @@
 									<Label text="Position" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="idPosition" valueHelpRequest="handleValueHelpSelectPosition" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="idPosition" valueHelpRequest="handleValueHelpSelectPosition" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -223,8 +197,7 @@
 									<Label text="Jabatan" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="JabatanA" value="{CurrentOrganization>/StellA}" placeholder="Input Jabatan" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="JabatanA" value="{CurrentOrganization>/StellA}" placeholder="Input Jabatan" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -232,17 +205,15 @@
 									<Label text="Golongan" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="idGolongan" valueHelpRequest="handleValueHelpSelectGolongan" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="idGolongan" valueHelpRequest="handleValueHelpSelectGolongan" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
 								<form:label>
-									<Label text="Org. Key" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									<Label text="Org. Key" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="OrgKeyA" value="{CurrentOrganization>/Vdsk1A}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="OrgKeyA" value="" valueHelpRequest="handleValueHelpSelectOrgKey" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="true" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -257,8 +228,7 @@
 									<Label text="Hiring Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="HiringDate" value="{ServiceLength>/HiringDate}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="HiringDate" value="{ServiceLength>/HiringDate}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -266,11 +236,9 @@
 									<Label text="Length of Service" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="LosYear" value="{ServiceLength>/LosYear}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="LosYear" value="{ServiceLength>/LosYear}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 									<Text text="Years" width="49px" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-									<Input id="LosMonth" value="{ServiceLength>/LosMonth}" type="Text" showValueHelp="false" enabled="false" visible="true" width="89.8046875px" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="LosMonth" value="{ServiceLength>/LosMonth}" type="Text" showValueHelp="false" enabled="false" visible="true" width="89.8046875px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 									<Text text="Months" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:fields>
 							</form:FormElement>
@@ -279,8 +247,7 @@
 									<Label text="Last Promotion Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="LastPromotionDate" value="{CurrentOrganization>/BegdaC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false"
-										required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="LastPromotionDate" value="{CurrentOrganization>/BegdaC}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -301,9 +268,8 @@
 									<!--	</items>-->
 									<!--</ComboBox>-->
 									
-									<ComboBox id="ReasonPromotion"
-										items="{odataPromosi>/MasterDataReasonPromosiSet}">
-										<core:ListItem key="{odataPromosi>Massn}" text="{odataPromosi>Massn}:{odataPromosi>Massg} - {odataPromosi>Mgtxt}" />
+									<ComboBox id="ReasonPromotion" items="{odataPromosi>/MasterDataReasonPromosiSet}">
+										<core:ListItem key="{odataPromosi>Massn}" text="{odataPromosi>Massn}:{odataPromosi&gt;Massg} - {odataPromosi>Mgtxt}"/>
 									</ComboBox>
 								</form:fields>
 							</form:FormElement>
@@ -312,8 +278,7 @@
 									<Label text="Comment Request" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<TextArea id="CommentRequest" value="" rows="2" placeholder="Input your comment on request" cols="20" maxLength="0" wrapping="None" enabled="true"
-										required="false" valueStateText="Invalid entry" visible="true"/>
+									<TextArea id="CommentRequest" value="" rows="2" placeholder="Input your comment on request" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" visible="true"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -328,8 +293,7 @@
 									<Label text="Appraisal Year" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="AppraisalYear" value="{PerformanceAppraisal>AppraisalYear}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="AppraisalYear" value="{PerformanceAppraisal>/AppraisalYear}" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -337,8 +301,7 @@
 									<Label text="Appraisal Score" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="AppraisalScore" value="{PerformanceAppraisal>AppraisalScore}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false"
-										valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="AppraisalScore" value="{PerformanceAppraisal>/AppraisalScore}" type="Text" showValueHelp="false" enabled="false" visible="true" width="140px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -353,8 +316,7 @@
 									<Label text="Education" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="LastEducation" value="{LastEducation>/Stext}" placeholder="Bachelor Degree" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="LastEducation" value="{LastEducation>/Stext}" placeholder="Bachelor Degree" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -362,8 +324,7 @@
 									<Label text="Branch Of Study" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="BranchOfStudy" value="{LastEducation>/Ftext}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="BranchOfStudy" value="{LastEducation>/Ftext}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -378,8 +339,7 @@
 									<Label text="Warning Letter" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="WarningLetter" value="{WarningLetter>/Grres}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="WarningLetter" value="{WarningLetter>/Grres}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -387,8 +347,7 @@
 									<Label text="Start Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="WarningLetterStartDate" value="{WarningLetter>/Begda}" placeholder="Information Technologu" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="WarningLetterStartDate" value="{WarningLetter>/Begda}" placeholder="Information Technologu" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -396,8 +355,7 @@
 									<Label id="WarningLetterEndDate" text="End Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input value="{WarningLetter>/Endda}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%"
-										valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input value="{WarningLetter>/Endda}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -405,8 +363,7 @@
 									<Label text="Reason" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="WarningLetterReason" value="{WarningLetter>/Grsty}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true"
-										width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="WarningLetterReason" value="{WarningLetter>/Grsty}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>
@@ -421,8 +378,7 @@
 									<Label text="Recommendation" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<ComboBox id="Recommendation" selectedKey="Recommended" placeholder="Select Reason" editable="true" enabled="true" visible="true" width="auto" valueState="None"
-										maxWidth="100%">
+									<ComboBox id="Recommendation" selectedKey="Recommended" placeholder="Select Reason" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
 										<items>
 											<core:Item text="Recommended" enabled="true" key="Recommended"/>
 											<core:Item text="Not Recommended" enabled="true" key="Not Recommended"/>
@@ -445,10 +401,8 @@
 			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
 				<content>
 					<ToolbarSpacer width=""/>
-					<Button text="Create Request" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
-						press="postRequestPromosi"/>
-					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
-						press="_onButtonPress1"/>
+					<Button text="Create Request" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="postRequestPromosi"/>
+					<Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
 				</content>
 			</OverflowToolbar>
 		</footer>

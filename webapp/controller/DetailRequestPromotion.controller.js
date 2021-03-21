@@ -46,10 +46,15 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			console.log(SelectData);
 			
 			this.getView().setModel(SelectData, "SelectData");
-			console.log("SelectData:");
-			console.log(this.getView().getModel("SelectData"));
-			console.log("handle");
+			console.log("Pernr of SelectData : ");
+			var employeeid = this.getView().getModel("SelectData").oData.Pernr;
+			console.log(employeeid);
 			
+			// var employeeid = this.getView().getModel(SelectData).getProperty("/oData/Pernr");
+			// var employeeid = this.getView().getModel(SelectData).getObject("/"+Pernr);
+			// var employeeid = this.getView().getModel().getProperty("/RequestDetail"++"/Pernr");
+			// console.log(employeeid);
+						
 			//Define OData
 			this.sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			this.oModelData = new sap.ui.model.odata.ODataModel(this.sUrl, true);
@@ -61,7 +66,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.getView().setModel(oViewModelEducation, "LastEducation");
 			//read education data 
 			// this.oModelData.read("/LastEducationSet('"+employeeid+"')", {
-			this.oModelData.read("/LastEducationSet(Pernr='62200018')", {
+			this.oModelData.read("/LastEducationSet(Pernr='"+employeeid+"')", {
 			  success: function(oData, response) { 
 			  	 oViewModelEducation.setData(oData);
 			  },
@@ -76,7 +81,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.getView().setModel(oModelLos);
 			this.getView().setModel(oViewModelServiceLength, "ServiceLength");
 			//read Length of Service Data
-			this.oModelData.read("/LengthOfServiceSet(Pernr='62200018')", {
+			this.oModelData.read("/LengthOfServiceSet(Pernr='"+employeeid+"')", {
 				success: function(oData, respionse) {
 					oViewModelServiceLength.setData(oData);
 					// console.log("success");
@@ -95,7 +100,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			this.oModelTest = new sap.ui.model.odata.ODataModel(this.sUrl, true);
 			//read Performance Appraisal Data
-			this.oModelTest.read("/PerfromanceAppraisalsSet(Pernr='62200018')", {
+			this.oModelTest.read("/PerfromanceAppraisalsSet(Pernr='"+employeeid+"')", {
 				success: function(oData, respionse) {
 					oViewModelPerformanceAppraisal.setData(oData);
 					// console.log(respionse);
@@ -112,7 +117,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			this.getView().setModel(oModelWarning);
 			this.getView().setModel(oViewModelWarningLetter, "WarningLetter");
 			//read Length of Service Data
-			this.oModelData.read("/WarningLetterSet(Pernr='62200018')", {
+			this.oModelData.read("/WarningLetterSet(Pernr='"+employeeid+"')", {
 				success: function(oData, respionse) {
 					oViewModelWarningLetter.setData(oData);
 					// console.log("success");
@@ -370,45 +375,44 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			// console.log("oEntry : ");
 			// console.log(oEntry);
 			
-			// //post the model
-			// var busyIndicator = sap.ui.core.BusyIndicator;
-			// var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
-			// var oModelv2 = new sap.ui.model.odata.v2.ODataModel(sUrl);
-			// // var odataMutasi = this.getView().getModel("odataPromosi");
-			// oModelv2.attachRequestSent(function () {
-			// 	busyIndicator.show(0);
-			// });
-			// oModelv2.attachRequestCompleted(function () {
-			// 	busyIndicator.hide();
-			// });
-			// oModelv2.setHeaders({
-			// 	"X-Requested-With": "X",
-			// 	"X-CSRF-Token": "Fetch"
-			// });
-			// var oThis = this;
-			// oModelv2.create("/LISTREQUESTDATAPROMOTIONSet", oEntry, {
-			// 	method: "PUT",
-			// 	success: function (data) {
-			// 		MessageBox.success("Employee Promotion is Successfully Requested", {
-			// 			onClose: function () {
-			// 				// oThis.naviBack();
-			// 				// oThis.naviBackToHome();
-			// 			}
-			// 		});
-			// 		// console.log("message : ");
-			// 		// console.log(data);
-			// 		// oThis.naviBack();
-			// 	},
-			// 	error: function (e) {
-			// 		var vjson = JSON.parse(e.responseText);
-			// 		// if (vjson.error.innererror.errordetails.length !== 0) {
-			// 		// 	MessageBox.error(vjson.error.innererror.errordetails[0].message + ", " + vjson.error.message.value);
-			// 		// } else {
-			// 		// 	MessageBox.error(vjson.error.message.value);
-			// 		// }
-			// 		MessageBox.error(vjson.error.message.value);
-			// 	}
-			// });
+			//put the model
+			var busyIndicator = sap.ui.core.BusyIndicator;
+			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
+			var oModelv2 = new sap.ui.model.odata.v2.ODataModel(sUrl);
+			oModelv2.attachRequestSent(function () {
+				busyIndicator.show(0);
+			});
+			oModelv2.attachRequestCompleted(function () {
+				busyIndicator.hide();
+			});
+			oModelv2.setHeaders({
+				"X-Requested-With": "X",
+				"X-CSRF-Token": "Fetch"
+			});
+			var oThis = this;
+			oModelv2.update("/LISTREQUESTDATAPROMOTIONSet(Reqid='"+oEntry.Reqid+"',Pernr='"+oEntry.Pernr+"')", oEntry, {
+				method: "PUT",
+				success: function (data) {
+					MessageBox.success("Request Number" + oEntry.Reqid + " is Successfully Updated", {
+						onClose: function () {
+							// oThis.naviBack();
+							// oThis.naviBackToHome();
+						}
+					});
+					// console.log("message : ");
+					// console.log(data);
+					// oThis.naviBack();
+				},
+				error: function (e) {
+					var vjson = JSON.parse(e.responseText);
+					// if (vjson.error.innererror.errordetails.length !== 0) {
+					// 	MessageBox.error(vjson.error.innererror.errordetails[0].message + ", " + vjson.error.message.value);
+					// } else {
+					// 	MessageBox.error(vjson.error.message.value);
+					// }
+					MessageBox.error(vjson.error.message.value);
+				}
+			});
 
 			
 		}

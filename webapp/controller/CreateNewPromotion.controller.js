@@ -3,8 +3,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"./Dialog1",
 	"./utilities",
 	"sap/ui/core/routing/History",
-	"sap/m/MessageToast"
-], function (BaseController, MessageBox, Dialog1, Utilities, History,MessageToast) {
+	"sap/m/MessageToast",
+	'sap/ui/model/Filter',
+	'sap/ui/model/FilterOperator'
+], function (BaseController, MessageBox, Dialog1, Utilities, History,MessageToast, Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.modulePa.controller.CreateNewPromotion", {
@@ -146,7 +148,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		// 
 		_onObjectMatched: function (oEvent) {
 			
 			//get odata entity select employee by employeeID
@@ -217,24 +218,41 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 			});
 			
-			//Defind Model Performance Appraisal by Employee ID
+			//Define Model Performance Appraisal by Employee ID
 			var oModelPa = this.getOwnerComponent().getModel("CreateNewPromotion"),
 			oViewModelPerformanceAppraisal = new sap.ui.model.json.JSONModel();
 			this.getView().setModel(oModelPa);
 			this.getView().setModel(oViewModelPerformanceAppraisal, "PerformanceAppraisal");
-			this.sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
-			this.oModelTest = new sap.ui.model.odata.ODataModel(this.sUrl, true);
-			//read Performance Appraisal Data
-			this.oModelTest.read("/PerfromanceAppraisalsSet(Pernr='"+employeeid+"')", {
+			//read Length of Service Data
+			this.oModelData.read("/PerformanceAppraisalsSet('"+employeeid+"')", {
 				success: function(oData, respionse) {
 					oViewModelPerformanceAppraisal.setData(oData);
-					console.log(respionse);
+					console.log("success");
+					// done
 				},
 				error: function(oError) {
-					console.log("error nya ini");
-					// Need to check on OData
+					console.log("error");
 				}
 			});
+			
+			// //Defind Model Performance Appraisal by Employee ID
+			// var oModelPa = this.getOwnerComponent().getModel("CreateNewPromotion"),
+			// oViewModelPerformanceAppraisal = new sap.ui.model.json.JSONModel();
+			// this.getView().setModel(oModelPa);
+			// this.getView().setModel(oViewModelPerformanceAppraisal, "PerformanceAppraisal");
+			// this.sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
+			// this.oModelData = new sap.ui.model.odata.ODataModel(this.sUrl, true);
+			// //read Performance Appraisal Data
+			// this.oModelData.read("/PerformanceAppraisalsSet(Pernr='"+employeeid+"')", {
+			// 	success: function(oData, respionse) {
+			// 		oViewModelPerformanceAppraisal.setData(oData);
+			// 		console.log(respionse);
+			// 	},
+			// 	error: function(oError) {
+			// 		console.log("error nya ini");
+			// 		// Need to check on OData
+			// 	}
+			// });
 			
 			//Defind Model Warning Letter by Employee ID
 			var oModelWarning = this.getOwnerComponent().getModel("CreateNewPromotion"),
@@ -270,7 +288,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			
 			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
-			oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
+			// oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
 			this.getView().setModel(oModel,"odataPromosi");
 			
 			
@@ -294,6 +312,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var sPath = oSelectedContexts[0].sPath;
 			var oIdGolongan = this.getView().byId("idGolongan");
 			oIdGolongan.setValue(this.getView().getModel("odataPromosi").getProperty(sPath).Persk+ " - " +this.getView().getModel("odataPromosi").getProperty(sPath).Ptext);
+		},
+		
+		handleValueHelpGolonganSearch : function (evt) {
+			
+			var oSelectedContexts = evt.getParameter("selectedContexts");
+			// var sPath = oSelectedContexts[0].sPath;
+			var oIdGolongan = this.getView().byId("idGolongan");
+			
+			var sValue = evt.getParameter("value").toUpperCase();
+			var aFilter = [];
+			if(sValue !== ""){
+				var sValueLower = sValue.toLowerCase();
+				var sValueUpper = sValue.toUpperCase();
+				var sValueUpLow = sValue[0].toUpperCase() + sValue.substr(1).toLowerCase();
+				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueLower));
+				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueUpper));
+				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueUpLow));
+				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValue));
+			}else{
+				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValue));
+			}
+		
+			evt.getSource().getBinding("items").filter(aFilter);
 		},
 		
 		handleValueHelpSelectPosition : function (oController) {
@@ -323,6 +364,26 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oIdSection.setValue(this.getView().getModel("odataPromosi").getProperty(sPath).SectA+ " - " +this.getView().getModel("odataPromosi").getProperty(sPath).SectTxtA);
 			
 			// console.log('success');
+		},
+		
+		handleValueHelpSelectOrgKey : function (oController) {
+			if (!this._valueHelpDialogOrgKey) {
+				this._valueHelpDialogOrgKey = sap.ui.xmlfragment(
+					"com.sap.build.standard.modulePa.view.ValueHelpDialog.ValueHelpSelectOrgKey",
+					this
+				);
+				this.getView().addDependent(this._valueHelpDialogOrgKey);
+			}
+
+			// open value help dialog
+			this._valueHelpDialogOrgKey.open();
+		},
+		
+		handleValueHelpOrgKeyClose : function (evt) {
+			var oSelectedContexts = evt.getParameter("selectedContexts");
+			var sPath = oSelectedContexts[0].sPath;
+			var oIdGolongan = this.getView().byId("OrgKeyA");
+			oIdGolongan.setValue(this.getView().getModel("odataPromosi").getProperty(sPath).Orgky);
 		},
 		
 		postRequestPromosi: function(){
@@ -385,19 +446,68 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			//--To be continued (Date -1 Logic)--
 			var EndDate = new Date(this.getView().byId("StartDateA").getValue());
 			var EndDateYesterday = new Date();
-			EndDateYesterday.setDate(EndDate.getDate() - 1);
+			EndDateYesterday.setDate(EndDate.getDate() - 1).toLocaleDateString();
+			// EndDateYesterday.getDate() + '.' + (EndDateYesterday.getMonth()+1) + '.' + EndDateYesterday.getFullYear();
 			
-			var date = toString(EndDateYesterday).substr(8,2);
-			var month = String(EndDateYesterday).substr(5,2);
-			var year = EndDateYesterday.toString().substr(0,4);
-			var BegdaA = date+"-"+month+"-"+year;
-			var EnddaA = this.getView().byId("EndDateA").getValue();
+			// console.log("Input: ");
+			// console.log(EndDate);
 			
-			console.log("BegdaA:");
-			console.log(BegdaA);
-			
-			console.log("Yesterday of Selected Date is:");
+			console.log("Yesterday: ")
 			console.log(EndDateYesterday);
+			
+			var dateS = '';
+			var monthS = '';
+			var dateA = '';
+			var monthA = '';
+			var zero = "0";
+			var rawdateS = parseInt(EndDate.getDate());
+			var rawmonthS = parseInt(EndDate.getMonth());
+			var yearS = EndDate.getFullYear();
+			
+			console.log(rawdateS +" - "+ rawmonthS +" - "+ yearS);
+			
+			if (rawdateS<10) {
+				dateS = zero.concat(rawdateS);
+			}
+			else {
+				dateS = rawdateS;
+			}
+			
+			if (rawmonthS + 1 <10) {
+				monthS = zero.concat(rawmonthS+1);
+			}
+			else {
+				monthS = rawmonthS+1;
+			}
+			var BegdaA = dateS+"."+monthS+"."+yearS;
+			
+			var rawdateA = parseInt(EndDateYesterday.getDate());
+			var rawmonthA = EndDateYesterday.getMonth();
+			var yearA = EndDateYesterday.getFullYear();
+			console.log(yearA);
+			if (rawdateA<10) {
+				dateA = zero.concat(rawdateA);
+			}
+			else {
+				dateA = rawdateA;
+			}
+			if (rawmonthA + 1 <10) {
+				monthA = zero.concat(rawmonthA+1);
+			}
+			else {
+				monthA = rawmonthA+1;
+			}
+			
+			var EnddaA = dateA+"."+monthA+"."+yearA;
+			
+			// console.log("BegdaA:");
+			// console.log(BegdaA);
+			
+			// console.log("EnddaA:");
+			// console.log(EnddaA);
+			
+			// console.log("Yesterday of Selected Date:");
+			// console.log(EndDateYesterday);
 			
 			
 			
@@ -527,7 +637,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			// oModelv2.create("/LISTREQUESTDATAPROMOTIONSet", oEntry, {
 			// 	method: "POST",
 			// 	success: function (data) {
-			// 		MessageBox.success("Employee Promotion is Successfully Updated", {
+			// 		MessageBox.success("Employee Promotion is Successfully Requested", {
 			// 			onClose: function () {
 			// 				// oThis.naviBack();
 			// 				// oThis.naviBackToHome();

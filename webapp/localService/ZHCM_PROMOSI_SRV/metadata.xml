@@ -211,6 +211,11 @@
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SectTxtA" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Section Text"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PlansTxtA" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Position Text"
 					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PerformanceAppraisals2" sap:content-version="1">
+				<Key><PropertyRef Name="Pernr"/></Key><Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel no." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AppraisalYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Fiscal Year"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AppraisalScore" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Appraisal Score"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
 			<EntityContainer Name="ZHCM_PROMOSI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="MasterDataReasonPromosiSet" EntityType="ZHCM_PROMOSI_SRV.MasterDataReasonPromosi" sap:creatable="false"
 				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetDetailEmployeePromotionSet" EntityType="ZHCM_PROMOSI_SRV.GetDetailEmployeePromotion" sap:creatable="false"
 				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="LISTREQUESTDATAPROMOTIONSet" EntityType="ZHCM_PROMOSI_SRV.ListRequestDataPromotion" sap:creatable="false"
@@ -233,6 +238,7 @@
 				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MasterDataTimeAdministratorSet" EntityType="ZHCM_PROMOSI_SRV.MasterDataTimeAdministrator" sap:creatable="false"
 				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="MasterDataLastNameSet" EntityType="ZHCM_PROMOSI_SRV.MasterDataLastName" sap:creatable="false" sap:updatable="false"
 				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="GetAfterPromotionDataSet" EntityType="ZHCM_PROMOSI_SRV.GetAfterPromotionData" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PerformanceAppraisals2Set" EntityType="ZHCM_PROMOSI_SRV.PerformanceAppraisals2" sap:creatable="false" sap:updatable="false"
 				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self"
 				href="https://webidecp-nkapqkesbn.dispatcher.jp1.hana.ondemand.com/destinations/IDDCLNT777/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/$metadata"
 				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"

@@ -14,7 +14,7 @@
 									<Label text="Employee ID" design="Standard" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input placeholder="Select Employee ID" id="idEmployee" type="Text" showValueHelp="true" valueHelpRequest="handleValueHelpSelectEmployee" enabled="true" visible="true" width="auto" valueHelpOnly="false"
+									<Input placeholder="Select Employee ID" id="idEmployeeID" type="Text" showValueHelp="true" valueHelpRequest="handleValueHelpSelectEmployee" enabled="true" visible="true" width="auto" valueHelpOnly="false"
 										required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
