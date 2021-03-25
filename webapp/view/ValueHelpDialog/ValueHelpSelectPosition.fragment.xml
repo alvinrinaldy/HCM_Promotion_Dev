@@ -9,7 +9,7 @@
 		search="handleValueHelpPositionSearch"
 		confirm="handleValueHelpPositionClose" 
 		cancel="handleValueHelpPositionCancel">
-		<StandardListItem growing="false" title="{odataPromosi>PlansA}" info="{odataPromosi>PlansTxtA}" type="Active">
+		<StandardListItem title="{odataPromosi>PlansA}" info="{odataPromosi>PlansTxtA}" type="Active">
 		</StandardListItem>
 	</SelectDialog>
 </core:FragmentDefinition>

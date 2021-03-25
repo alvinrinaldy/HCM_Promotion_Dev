@@ -137,8 +137,8 @@
 								</form:label>
 								<form:fields>
 									<Input id="StartDateA" value="" placeholder="" type="Date" description="" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0" valueFormat="dd/mm/yyyy" dateFormat="dd.MM.YYYY"/>
-									<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true" class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>
-									<Input id="EndDateA" value="31.12.9999" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<!--<Label text="End Date" design="Standard" width="90%" required="false" textAlign="End" textDirection="Inherit" visible="true" class="sapUiSmallMarginTop sapUiTinyMarginBottom sapUiTinyMarginBegin sapUiTinyMarginEnd"/>-->
+									<!--<Input id="EndDateA" value="31.12.9999" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>-->
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -339,7 +339,7 @@
 									<Label text="Warning Letter" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="WarningLetter" value="{WarningLetter>/Grres}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="WarningLetter" value="{WarningLetter>/GrresTxt}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 							<form:FormElement visible="true">
@@ -363,7 +363,7 @@
 									<Label text="Reason" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 								</form:label>
 								<form:fields>
-									<Input id="WarningLetterReason" value="{WarningLetter>/Grsty}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+									<Input id="WarningLetterReason" value="{WarningLetter>/GrstyTxt}" placeholder="" type="Text" showValueHelp="false" enabled="false" visible="true" width="100%" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
 								</form:fields>
 							</form:FormElement>
 						</form:formElements>

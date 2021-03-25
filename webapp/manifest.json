@@ -111,7 +111,12 @@
 			}
 		},
 		"resources": {
-			"css": []
+			"css": [],
+			"js": [
+				{
+					"uri": "libs/moment.js"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -122,7 +127,9 @@
 				"clearTarget": false,
 				"controlAggregation": "pages",
 				"bypassed": {
-					"target": ["ListDataPromotion"]
+					"target": [
+						"ListDataPromotion"
+					]
 				}
 			},
 			"targets": {
@@ -155,27 +162,47 @@
 					"transition": "slide"
 				}
 			},
-			"routes": [{
-				"pattern": "ListDataPromotion/:context:",
-				"name": "ListDataPromotion",
-				"target": ["ListDataPromotion"]
-			}, {
-				"pattern": "",
-				"name": "default",
-				"target": ["ListDataPromotion"]
-			}, {
-				"pattern": "SelectEmployeePromotion/:context:",
-				"name": "SelectEmployeePromotion",
-				"target": ["SelectEmployeePromotion"]
-			}, {
-				"pattern": "CreateNewPromotion/{EmployeeId}/{EmployeeName}",
-				"name": "CreateNewPromotion",
-				"target": ["CreateNewPromotion"]
-			}, {
-				"pattern": "DetailRequestPromotion/:context:",
-				"name": "DetailRequestPromotion",
-				"target": ["DetailRequestPromotion"]
-			}]
+			"routes": [
+				{
+					"pattern": "ListDataPromotion/:context:",
+					"name": "ListDataPromotion",
+					"target": [
+						"ListDataPromotion"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"ListDataPromotion"
+					]
+				},
+				{
+					"pattern": "SelectEmployeePromotion/:context:",
+					"name": "SelectEmployeePromotion",
+					"target": [
+						"SelectEmployeePromotion"
+					]
+				},
+				{
+					"pattern": "CreateNewPromotion/{EmployeeId}/{EmployeeName}",
+					"name": "CreateNewPromotion",
+					"target": [
+						"CreateNewPromotion"
+					]
+				},
+				{
+					"pattern": "DetailRequestPromotion/:context:",
+					"name": "DetailRequestPromotion",
+					"target": [
+						"DetailRequestPromotion"
+					]
+				}
+			]
 		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zemppromotion/webapp",
+		"_version": "1.1.0"
 	}
 }

@@ -1,11 +1,13 @@
+/* global moment:true */
+// jQuery.sap.require("HCM_PROMOSI/libs/moment");
 sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./Dialog1",
 	"./utilities",
 	"sap/ui/core/routing/History",
 	"sap/m/MessageToast",
-	'sap/ui/model/Filter',
-	'sap/ui/model/FilterOperator'
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
 ], function (BaseController, MessageBox, Dialog1, Utilities, History,MessageToast, Filter, FilterOperator) {
 	"use strict";
 
@@ -285,12 +287,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("CreateNewPromotion").attachPatternMatched(this._onObjectMatched, this);
 			
-			
 			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
 			var oModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
 			// oModel.setDefaultCountMode(sap.ui.model.odata.CountMode.inline);
 			this.getView().setModel(oModel,"odataPromosi");
-			
 			
 		},
 		
@@ -314,6 +314,29 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oIdGolongan.setValue(this.getView().getModel("odataPromosi").getProperty(sPath).Persk+ " - " +this.getView().getModel("odataPromosi").getProperty(sPath).Ptext);
 		},
 		
+		handleValueHelpPositionSearch : function (evt) {
+			
+			var oSelectedContexts = evt.getParameter("selectedContexts");
+			// var sPath = oSelectedContexts[0].sPath;
+			var idPosition = this.getView().byId("idPosition");
+			
+			var sValue = evt.getParameter("value").toUpperCase();
+			var aFilter = [];
+			if(sValue !== ""){
+				var sValueLower = sValue.toLowerCase();
+				var sValueUpper = sValue.toUpperCase();
+				var sValueUpLow = sValue[0].toUpperCase() + sValue.substr(1).toLowerCase();
+				aFilter.push(new Filter("PlansA", FilterOperator.Contains, sValueLower));
+				aFilter.push(new Filter("PlansA", FilterOperator.Contains, sValueUpper));
+				aFilter.push(new Filter("PlansA", FilterOperator.Contains, sValueUpLow));
+				aFilter.push(new Filter("PlansA", FilterOperator.Contains, sValue));
+			}else{
+				aFilter.push(new Filter("PlansA", FilterOperator.Contains, sValue));
+			}
+		
+			evt.getSource().getBinding("items").filter(aFilter);
+		},
+		
 		handleValueHelpGolonganSearch : function (evt) {
 			
 			var oSelectedContexts = evt.getParameter("selectedContexts");
@@ -326,12 +349,35 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				var sValueLower = sValue.toLowerCase();
 				var sValueUpper = sValue.toUpperCase();
 				var sValueUpLow = sValue[0].toUpperCase() + sValue.substr(1).toLowerCase();
-				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueLower));
-				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueUpper));
-				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValueUpLow));
-				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValue));
+				aFilter.push(new Filter("Persk", FilterOperator.Contains, sValueLower));
+				aFilter.push(new Filter("Persk", FilterOperator.Contains, sValueUpper));
+				aFilter.push(new Filter("Persk", FilterOperator.Contains, sValueUpLow));
+				aFilter.push(new Filter("Persk", FilterOperator.Contains, sValue));
 			}else{
-				aFilter.push(new Filter("Ptext", FilterOperator.Contains, sValue));
+				aFilter.push(new Filter("Persk", FilterOperator.Contains, sValue));
+			}
+		
+			evt.getSource().getBinding("items").filter(aFilter);
+		},
+		
+		handleValueHelpOrgKeySearch : function (evt) {
+			
+			var oSelectedContexts = evt.getParameter("selectedContexts");
+			// var sPath = oSelectedContexts[0].sPath;
+			var OrgKey = this.getView().byId("OrgKeyA");
+			
+			var sValue = evt.getParameter("value").toUpperCase();
+			var aFilter = [];
+			if(sValue !== ""){
+				var sValueLower = sValue.toLowerCase();
+				var sValueUpper = sValue.toUpperCase();
+				var sValueUpLow = sValue[0].toUpperCase() + sValue.substr(1).toLowerCase();
+				aFilter.push(new Filter("Orgky", FilterOperator.Contains, sValueLower));
+				aFilter.push(new Filter("Orgky", FilterOperator.Contains, sValueUpper));
+				aFilter.push(new Filter("Orgky", FilterOperator.Contains, sValueUpLow));
+				aFilter.push(new Filter("Orgky", FilterOperator.Contains, sValue));
+			}else{
+				aFilter.push(new Filter("Orgky", FilterOperator.Contains, sValue));
 			}
 		
 			evt.getSource().getBinding("items").filter(aFilter);
@@ -442,74 +488,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			
 			var Pernr = this.getView().byId("EmployeeId").getValue();
 			var Cname = this.getView().byId("EmployeeName").getValue();
-			// var EnddaC = this.getView().byId("StartDateA").getValue();
-			//--To be continued (Date -1 Logic)--
-			var EndDate = new Date(this.getView().byId("StartDateA").getValue());
-			var EndDateYesterday = new Date();
-			EndDateYesterday.setDate(EndDate.getDate() - 1).toLocaleDateString();
-			// EndDateYesterday.getDate() + '.' + (EndDateYesterday.getMonth()+1) + '.' + EndDateYesterday.getFullYear();
 			
-			// console.log("Input: ");
-			// console.log(EndDate);
+			var BegdaC = this.getView().byId("StartDateC").getValue();
+			var EnddaA = "31.12.9999";
+			var BegdaAa = moment(this.getView().byId("StartDateA").getValue()).format('L');
+			var BegdaA = moment(this.getView().byId("StartDateA").getValue()).format('DD[.]MM[.]YYYY');
+			var EnddaC = moment(BegdaAa).subtract(1, 'days').format('DD[.]MM[.]YYYY');
 			
-			console.log("Yesterday: ")
-			console.log(EndDateYesterday);
-			
-			var dateS = '';
-			var monthS = '';
-			var dateA = '';
-			var monthA = '';
-			var zero = "0";
-			var rawdateS = parseInt(EndDate.getDate());
-			var rawmonthS = parseInt(EndDate.getMonth());
-			var yearS = EndDate.getFullYear();
-			
-			console.log(rawdateS +" - "+ rawmonthS +" - "+ yearS);
-			
-			if (rawdateS<10) {
-				dateS = zero.concat(rawdateS);
-			}
-			else {
-				dateS = rawdateS;
-			}
-			
-			if (rawmonthS + 1 <10) {
-				monthS = zero.concat(rawmonthS+1);
-			}
-			else {
-				monthS = rawmonthS+1;
-			}
-			var BegdaA = dateS+"."+monthS+"."+yearS;
-			
-			var rawdateA = parseInt(EndDateYesterday.getDate());
-			var rawmonthA = EndDateYesterday.getMonth();
-			var yearA = EndDateYesterday.getFullYear();
-			console.log(yearA);
-			if (rawdateA<10) {
-				dateA = zero.concat(rawdateA);
-			}
-			else {
-				dateA = rawdateA;
-			}
-			if (rawmonthA + 1 <10) {
-				monthA = zero.concat(rawmonthA+1);
-			}
-			else {
-				monthA = rawmonthA+1;
-			}
-			
-			var EnddaA = dateA+"."+monthA+"."+yearA;
-			
-			// console.log("BegdaA:");
-			// console.log(BegdaA);
-			
-			// console.log("EnddaA:");
-			// console.log(EnddaA);
-			
-			// console.log("Yesterday of Selected Date:");
-			// console.log(EndDateYesterday);
-			
-			
+			console.log("Date List: ");
+			console.log("BegdaC: " + BegdaC);
+			console.log("EnddaA: " + EnddaA);
+			console.log("BegdaA: " + BegdaA);
+			console.log("EnddaC: " + EnddaC);
 			
 			//--Current--
 			// var BukrsC = this.getView().byId("BukrsC").getValue();
@@ -537,12 +527,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			var GolonganA = this.getView().byId("idGolongan").getValue().substr(0,2);
 			var OrgKeyA = this.getView().byId("OrgKeyA").getValue();
 			
-			//--Length of Service--
-			var HiringDate = this.getView().byId("HiringDate").getValue();
-			var LosYear = parseInt(this.getView().byId("LosYear").getValue(), 10);
-			var LosMonth = this.getView().byId("LosMonth").getValue();
-			var LastPromotionDate = this.getView().byId("LastPromotionDate").getValue();
-			
 			//--Request Information--
 			var Massn = this.getView().byId("ReasonPromotion").getValue().substr(0,2);
 			var Massg = this.getView().byId("ReasonPromotion").getValue().substr(3,2);
@@ -550,8 +534,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			
 			//--Recommendation--
 			var Recc = this.getView().byId("Recommendation").getValue();
-			
-			// console.log(BegdaA);
 			
 			var oEntry = {};
 			// oEntry.Reqid = "test" ;
@@ -600,11 +582,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oEntry.Rscode = "" ;
 			oEntry.RequestBy = "" ;
 			oEntry.Chngdt = "" ;
-			oEntry.BegdaC = "" ;
+			oEntry.BegdaC = BegdaC;
 			oEntry.Appdt = "" ;
-			oEntry.EnddaC = "" ;
+			oEntry.EnddaC = EnddaC;
 			oEntry.BegdaA = BegdaA;
-			oEntry.EnddaA = EnddaA ;
+			oEntry.EnddaA = EnddaA;
 			oEntry.RequestDate = "" ;
 			oEntry.EfektifDate = "" ;
 			
@@ -612,51 +594,48 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			
 			// ---------------------------------------------------------------------------------------------------------------
 			
-			
-			
-			
 			// console.log("oEntry : ");
 			// console.log(oEntry);
 			
 			// //post the model
-			// var busyIndicator = sap.ui.core.BusyIndicator;
-			// var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
-			// var oModelv2 = new sap.ui.model.odata.v2.ODataModel(sUrl);
-			// // var odataMutasi = this.getView().getModel("odataPromosi");
-			// oModelv2.attachRequestSent(function () {
-			// 	busyIndicator.show(0);
-			// });
-			// oModelv2.attachRequestCompleted(function () {
-			// 	busyIndicator.hide();
-			// });
-			// oModelv2.setHeaders({
-			// 	"X-Requested-With": "X",
-			// 	"X-CSRF-Token": "Fetch"
-			// });
-			// var oThis = this;
-			// oModelv2.create("/LISTREQUESTDATAPROMOTIONSet", oEntry, {
-			// 	method: "POST",
-			// 	success: function (data) {
-			// 		MessageBox.success("Employee Promotion is Successfully Requested", {
-			// 			onClose: function () {
-			// 				// oThis.naviBack();
-			// 				// oThis.naviBackToHome();
-			// 			}
-			// 		});
-			// 		// console.log("message : ");
-			// 		// console.log(data);
-			// 		// oThis.naviBack();
-			// 	},
-			// 	error: function (e) {
-			// 		var vjson = JSON.parse(e.responseText);
-			// 		// if (vjson.error.innererror.errordetails.length !== 0) {
-			// 		// 	MessageBox.error(vjson.error.innererror.errordetails[0].message + ", " + vjson.error.message.value);
-			// 		// } else {
-			// 		// 	MessageBox.error(vjson.error.message.value);
-			// 		// }
-			// 		MessageBox.error(vjson.error.message.value);
-			// 	}
-			// });
+			var busyIndicator = sap.ui.core.BusyIndicator;
+			var sUrl = "/sap/opu/odata/sap/ZHCM_PROMOSI_SRV/";
+			var oModelv2 = new sap.ui.model.odata.v2.ODataModel(sUrl);
+			// var odataMutasi = this.getView().getModel("odataPromosi");
+			oModelv2.attachRequestSent(function () {
+				busyIndicator.show(0);
+			});
+			oModelv2.attachRequestCompleted(function () {
+				busyIndicator.hide();
+			});
+			oModelv2.setHeaders({
+				"X-Requested-With": "X",
+				"X-CSRF-Token": "Fetch"
+			});
+			var oThis = this;
+			oModelv2.create("/LISTREQUESTDATAPROMOTIONSet", oEntry, {
+				method: "POST",
+				success: function (data) {
+					MessageBox.success("Employee Promotion is Successfully Requested", {
+						onClose: function () {
+							// oThis.naviBack();
+							// oThis.naviBackToHome();
+						}
+					});
+					// console.log("message : ");
+					// console.log(data);
+					// oThis.naviBack();
+				},
+				error: function (e) {
+					var vjson = JSON.parse(e.responseText);
+					// if (vjson.error.innererror.errordetails.length !== 0) {
+					// 	MessageBox.error(vjson.error.innererror.errordetails[0].message + ", " + vjson.error.message.value);
+					// } else {
+					// 	MessageBox.error(vjson.error.message.value);
+					// }
+					MessageBox.error(vjson.error.message.value);
+				}
+			});
 
 			
 		}

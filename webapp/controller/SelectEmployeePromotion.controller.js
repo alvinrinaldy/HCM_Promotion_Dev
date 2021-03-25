@@ -233,7 +233,7 @@ sap.ui.define([
 					
 				},
 				error: function (oError) { /* do something */
-					MessageBox.error("No purchase order document item found.");
+					MessageBox.error("No employee data found.");
 				},
 				filters: aFilter
 			});
